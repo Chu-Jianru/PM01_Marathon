@@ -35,7 +35,7 @@ Ubuntu 20.04，ROS Noetic，Gazebo 11。
 
 ```bash
 cd ~/marathongo/tangent_arc_navigation
-catkin_make --pkg gazebo_line_demo
+catkin_make --pkg PM01_Marathon
 source devel/setup.bash
 ```
 
@@ -45,7 +45,7 @@ source devel/setup.bash
 source /opt/ros/noetic/setup.bash
 source ~/marathongo/tangent_arc_navigation/devel/setup.bash
 source ~/glio_ws/devel/setup.bash --extend
-roslaunch gazebo_line_demo line_follow.launch gui:=true
+roslaunch PM01_Marathon line_follow.launch gui:=true
 ```
 
 不打开窗口时使用 `gui:=false`。

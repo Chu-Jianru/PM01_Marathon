@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>gazebo_line_demo</name>
+  <name>PM01_Marathon</name>
   <version>0.1.0</version>
   <description>Gazebo marathon segment for the tangent-arc tracker.</description>
   <maintainer email="2630086757@qq.com">Jianru Chu</maintainer>
