@@ -8,8 +8,8 @@ from sensor_msgs.msg import LaserScan, PointCloud2
 from std_msgs.msg import Header
 
 
-SENSOR_X = 0.40
-SENSOR_Z = 0.32
+SENSOR_X = 0.1365
+SENSOR_Z = 0.2938
 
 
 class ScanToCloud(object):

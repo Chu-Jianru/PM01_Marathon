@@ -28,7 +28,7 @@ class RsLidarPoints(object):
         self.horizontal = int(rospy.get_param("~horizontal_samples", 360))
         self.vertical = int(rospy.get_param("~vertical_samples", 32))
         self.scan_period = float(rospy.get_param("~scan_period", 0.1))
-        self.sensor_xyz = rospy.get_param("~sensor_xyz", [0.40, 0.0, 0.32])
+        self.sensor_xyz = rospy.get_param("~sensor_xyz", [0.1365, 0.0, 0.2938])
         self.frame_lidar = rospy.get_param("~lidar_frame", "laser")
         self.frame_body = rospy.get_param("~body_frame", "body")
         self.pub_lidar = rospy.Publisher("/rslidar_points", PointCloud2, queue_size=1)

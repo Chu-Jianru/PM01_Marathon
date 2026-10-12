@@ -11,10 +11,13 @@ catkin_install_python(PROGRAMS
   scripts/scan_to_cloud.py
   scripts/rslidar_points.py
   scripts/gnss_ksxt.py
+  scripts/glio_twist.py
+  scripts/sidewalk_traffic.py
   scripts/cloud_to_scan.py
+  scripts/gait_player.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
-install(DIRECTORY launch worlds urdf
+install(DIRECTORY launch worlds urdf config meshes texture
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )

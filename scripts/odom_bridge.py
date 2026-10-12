@@ -22,7 +22,6 @@ class OdomBridge(object):
         self.child_frame_id = rospy.get_param("~child_frame_id", "body")
         self.pubs = [
             rospy.Publisher("/odometry", Odometry, queue_size=10),
-            rospy.Publisher("/Odometry", Odometry, queue_size=10),
         ]
         rospy.Subscriber("/odom", Odometry, self.callback, queue_size=10)
 

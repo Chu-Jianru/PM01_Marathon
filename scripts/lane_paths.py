@@ -29,12 +29,11 @@ def make_path(frame, samples):
 def main():
     rospy.init_node("lane_paths")
     frame = rospy.get_param("~frame_id", "camera_init")
-    half_width = float(rospy.get_param("~half_width", course.HALF_WIDTH))
     center_samples = course.centerline()
     paths = {
         "/central/smoothed_path": center_samples,
-        "/left/smoothed_path": course.offset_path(center_samples, half_width),
-        "/right/smoothed_path": course.offset_path(center_samples, -half_width),
+        "/left/smoothed_path": course.offset_path(center_samples, course.LEFT_EDGE),
+        "/right/smoothed_path": course.offset_path(center_samples, course.RIGHT_EDGE),
     }
     publishers = {
         topic: rospy.Publisher(topic, Path, queue_size=1, latch=True)

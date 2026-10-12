@@ -1,0 +1,26 @@
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+
+gait_controller:
+  type: position_controllers/JointGroupPositionController
+  joints:
+    - J00_HIP_PITCH_L
+    - J03_KNEE_PITCH_L
+    - J04_ANKLE_PITCH_L
+    - J06_HIP_PITCH_R
+    - J09_KNEE_PITCH_R
+    - J10_ANKLE_PITCH_R
+    - J13_SHOULDER_PITCH_L
+    - J18_SHOULDER_PITCH_R
+
+gazebo_ros_control:
+  pid_gains:
+    J00_HIP_PITCH_L: {p: 220.0, i: 0.0, d: 8.0}
+    J03_KNEE_PITCH_L: {p: 180.0, i: 0.0, d: 6.0}
+    J04_ANKLE_PITCH_L: {p: 60.0, i: 0.0, d: 2.0}
+    J06_HIP_PITCH_R: {p: 220.0, i: 0.0, d: 8.0}
+    J09_KNEE_PITCH_R: {p: 180.0, i: 0.0, d: 6.0}
+    J10_ANKLE_PITCH_R: {p: 60.0, i: 0.0, d: 2.0}
+    J13_SHOULDER_PITCH_L: {p: 50.0, i: 0.0, d: 2.0}
+    J18_SHOULDER_PITCH_R: {p: 50.0, i: 0.0, d: 2.0}

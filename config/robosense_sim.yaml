@@ -1,0 +1,68 @@
+slam:
+  common:
+      lid_topic:  "rslidar_points"
+      imu_topic:  "imu/data"
+      gnss_topic: "gnss_ksxt"
+      time_sync_en: false
+      time_offset_lidar_to_imu: 0.0
+
+  preprocess:
+      lidar_type: 5
+      scan_line: 32
+      blind: 0.5
+      point_filter_num: 3
+      feature_extract_enable: false
+      timestamp_unit: 0
+
+  publish:
+      path_en:  false
+      scan_publish_en:  false
+      dense_publish_en: false
+      scan_bodyframe_pub_en: false
+
+  pcd_save:
+      pcd_save_en: false
+      interval: -1
+  filter_size_surf: 0.4
+  filter_size_map: 0.4
+  max_iteration: 3
+  map_file_path: ""
+  runtime_pos_log_enable: false
+
+imu_processing:
+  initUseRtk: true
+  acc_cov: 0.1
+  gyr_cov: 0.1
+  b_acc_cov: 0.0001
+  b_gyr_cov: 0.0001
+  extrinsic_T: [0.1365, 0.0, 0.2938]
+  extrinsic_R: [ 1, 0, 0,
+                0, 1, 0,
+                0, 0, 1 ]
+  static_rot_method: 3
+  gnss_heading_need_init: true
+  front:
+    gnss_cov: [0.00001, 0.00001, 0.00001]
+    gnss_front: true
+    wheel_cov: [0.0001, 0.0001, 0.0001]
+    wheel_front: false
+    virtual_wheel_front: false
+    static_vel_front: false
+    angle_cov: [0.0001, 0.0001, 0.0001]
+    angle_front: false
+gps_processing:
+    extrinsic_T_gnss: [-0.0055, 0.0, 0.5970]
+    extrinsic_R_gnss: [ 1, 0, 0,
+                        0, 1, 0,
+                        0, 0, 1 ]
+    initXYZ: [0, 0, 0]
+
+back:
+  gnss_cov: [0.0001, 0.0001, 0.0001]
+  gnss_back: true
+  useGpsElevation: true
+  tolerance_time: 0.05
+  pcd_save:
+      pcd_save_en: false
+      trajectory_save_en: false
+      interval: -1
