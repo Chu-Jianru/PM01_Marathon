@@ -2,34 +2,34 @@
   <arg name="gui" default="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="$(find PM01_Marathon)/worlds/line_course.world"/>
+    <arg name="world_name" value="$(find pm01_marathon)/worlds/line_course.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
     <arg name="gui" value="$(arg gui)"/>
     <arg name="headless" value="false"/>
   </include>
 
-  <param name="robot_description" textfile="$(find PM01_Marathon)/urdf/pm01_edu.urdf"/>
+  <param name="robot_description" textfile="$(find pm01_marathon)/urdf/pm01_edu.urdf"/>
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"
         args="-urdf -model pm01_edu -x 0 -y 0 -z 0.821 -param robot_description"/>
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
 
-  <node pkg="PM01_Marathon" type="odom_bridge.py" name="odom_bridge" output="screen"/>
-  <node pkg="PM01_Marathon" type="gnss_ksxt.py" name="gnss_ksxt" output="screen"/>
-  <node pkg="PM01_Marathon" type="sidewalk_traffic.py" name="sidewalk_traffic" output="screen"/>
+  <node pkg="pm01_marathon" type="odom_bridge.py" name="odom_bridge" output="screen"/>
+  <node pkg="pm01_marathon" type="gnss_ksxt.py" name="gnss_ksxt" output="screen"/>
+  <node pkg="pm01_marathon" type="sidewalk_traffic.py" name="sidewalk_traffic" output="screen"/>
   <node pkg="glio_mapping" type="glio_mapping_node" name="laserMapping" output="screen"
-        args="$(find PM01_Marathon)/config/robosense_sim.yaml"/>
-  <node pkg="PM01_Marathon" type="glio_twist.py" name="glio_twist" output="screen"/>
-  <node pkg="PM01_Marathon" type="rslidar_points.py" name="rslidar_points" output="screen">
+        args="$(find pm01_marathon)/config/robosense_sim.yaml"/>
+  <node pkg="pm01_marathon" type="glio_twist.py" name="glio_twist" output="screen"/>
+  <node pkg="pm01_marathon" type="rslidar_points.py" name="rslidar_points" output="screen">
     <param name="horizontal_samples" value="360"/>
     <param name="vertical_samples" value="32"/>
     <param name="scan_period" value="0.1"/>
     <rosparam param="sensor_xyz">[0.1365, 0.0, 0.2938]</rosparam>
   </node>
-  <node pkg="PM01_Marathon" type="cloud_to_scan.py" name="cloud_to_scan" output="screen">
+  <node pkg="pm01_marathon" type="cloud_to_scan.py" name="cloud_to_scan" output="screen">
     <param name="range_max" value="70.0"/>
   </node>
-  <node pkg="PM01_Marathon" type="lane_paths.py" name="lane_paths" output="screen"/>
+  <node pkg="pm01_marathon" type="lane_paths.py" name="lane_paths" output="screen"/>
 
   <node pkg="tf" type="static_transform_publisher" name="map_to_camera_init"
         args="0 0 0 0 0 0 map camera_init 100"/>

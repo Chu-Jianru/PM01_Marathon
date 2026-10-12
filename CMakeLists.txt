@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(PM01_Marathon)
+project(pm01_marathon)
 
 find_package(catkin REQUIRED COMPONENTS rospy)
 catkin_package()
