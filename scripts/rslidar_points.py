@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Turn the 32-line Gazebo scan into the RoboSense cloud GLIO reads.
-
-glio_mapping robosense.yaml subscribes to rslidar_points and expects
-x, y, z, intensity, ring, timestamp. The same points are moved into the
-body frame and published as /current_scan_body for the tracker.
-"""
+"""Publish /rslidar_points and /current_scan_body."""
 import math
 import struct
 

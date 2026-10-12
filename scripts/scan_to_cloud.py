@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Stack tilted lidar rings into one body-frame cloud.
-
-Publishes the names used by the marathon tracker and by GLIO:
-/current_scan_body, the README spelling /cuerrent_scan_body, and
-/cloud_registered_body.
-"""
+"""Merge lidar rings into one body-frame cloud."""
 import math
 
 import rospy

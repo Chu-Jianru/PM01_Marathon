@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Road geometry for a short piece of the marathon course.
-
-The yaw table allows about 0.09 rad/s at 3.5 m/s, so bends use a 60 m
-radius. Lane lines are the camera output: a center line and two boundaries.
-"""
+"""Course geometry. Bend radius 60 m."""
 import math
 
 
@@ -120,7 +116,7 @@ def course_length(points=None):
 
 
 def write_world(path):
-    """Write the Gazebo world so every object exists before the robot moves."""
+    """Write the world file."""
     points = centerline(step=3.0)
     chunks = ["""<?xml version="1.0"?>
 <sdf version="1.4">
@@ -199,11 +195,7 @@ def _box_model(name, x, y, z, yaw, length, width, height, color, collide):
 
 
 def _road_model(points):
-    """Grey road large enough to hold the whole segment.
-
-    The default Gazebo ground plane is 100 m square, so a course past
-    x = 50 m used to run off the grey square into the sky colour.
-    """
+    """Ground plane sized to the course."""
     xs = [point[0] for point in points]
     ys = [point[1] for point in points]
     margin = 40.0

@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Republish Gazebo /odom as /odometry for sim_interface_node.
-
-Gazebo puts twist in the robot frame. sim_interface_node rotates twist from
-the pose frame into the body frame, so this bridge first rotates twist into
-the pose frame.
-"""
+"""Republish /odom as /odometry. Twist is expressed in the pose frame."""
 import math
 
 import rospy

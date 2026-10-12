@@ -1,9 +1,4 @@
 <launch>
-  <!-- Short outdoor marathon segment.
-       A 32-line lidar publishes /rslidar_points, IMU publishes /imu/data,
-       and RTK publishes /gnss_ksxt, the three inputs in robosense.yaml.
-       The body cloud and /odometry feed the unchanged 3.5 m/s tracker.
-       The diff-drive base only tracks that velocity command. -->
   <arg name="gui" default="true"/>
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -57,7 +52,6 @@
     <rosparam command="load" file="$(find vo_navigation)/config/vo_node.yaml"/>
     <param name="enable_runtime_debug" value="false"/>
     <param name="enable_file_log" value="false"/>
-    <!-- Stop while the last subgoal is still ahead. The real route does not end here. -->
     <param name="goal_stop_distance" value="2.5"/>
   </node>
 

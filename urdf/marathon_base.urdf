@@ -70,7 +70,6 @@
       <publishOdomTF>false</publishOdomTF>
       <robotBaseFrame>body</robotBaseFrame>
       <publishWheelTF>false</publishWheelTF>
-      <!-- This plugin only publishes /odom when publishTf is true. TF itself stays off. -->
       <publishTf>true</publishTf>
       <publishWheelJointState>false</publishWheelJointState>
       <legacyMode>false</legacyMode>
@@ -109,7 +108,6 @@
     <mu2>1.5</mu2>
   </gazebo>
 
-  <!-- IMU sensor includes gravity, which is what the race initializer reads on /imu/data. -->
   <gazebo reference="body">
     <sensor name="imu_sensor" type="imu">
       <always_on>true</always_on>
@@ -123,7 +121,6 @@
     </sensor>
   </gazebo>
 
-  <!-- 32-line spinning lidar. Vertical FOV matches a road 32-beam scanner: -16 deg to +15 deg. -->
   <gazebo reference="laser">
     <sensor type="ray" name="rslidar">
       <pose>0 0 0 0 0 0</pose>

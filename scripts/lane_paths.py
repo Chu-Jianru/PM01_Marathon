@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Publish the marathon center line and both lane boundaries.
-
-These paths stand in for the camera segmentation output. They follow the
-same bends as the Gazebo road.
-"""
+"""Publish /central/smoothed_path, /left/smoothed_path, /right/smoothed_path."""
 import math
 import os
 import sys

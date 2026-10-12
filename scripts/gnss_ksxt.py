@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
-"""Publish Gazebo pose as the RTK fix GLIO subscribes to.
-
-robosense.yaml reads gnss_ksxt as sensor_msgs/NavSatFix. Heading is carried
-in position_covariance[6], and status 2 is the RTK fix the initializer accepts.
-"""
+"""Publish /gnss_ksxt from /odom."""
 import math
 
 import rospy

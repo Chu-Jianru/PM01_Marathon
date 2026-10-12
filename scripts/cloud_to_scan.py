@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Keep lidar returns taller than 0.4 m and publish /scan.
-
-The cloud is in the body frame. The axle is 0.15 m above the ground, so a
-point 0.4 m above the ground has z = 0.25. Lower clutter is dropped, which
-matches the marathon tracker's ground removal.
-"""
+"""Publish /scan. Body-frame points with z < 0.25 are dropped."""
 import math
 
 import numpy as np
