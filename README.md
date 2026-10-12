@@ -1,4 +1,4 @@
-# gazebo_line_demo
+# PM01_Marathon
 
 Gazebo 马拉松路段，配合 [marathongo](https://github.com/landitbot/marathongo) 的 `tangent_arc_navigation` 使用。跟踪程序不在本仓库内。
 
