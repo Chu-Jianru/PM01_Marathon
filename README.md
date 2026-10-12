@@ -42,7 +42,3 @@ roslaunch gazebo_line_demo line_follow.launch gui:=true
 ```
 
 无界面时把最后一行换成 `roslaunch gazebo_line_demo line_follow.launch gui:=false`。
-
-## 许可
-
-Apache License 2.0。详见 `LICENSE`。

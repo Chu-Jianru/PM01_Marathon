@@ -4,7 +4,6 @@
   <version>0.1.0</version>
   <description>Gazebo marathon segment for the tangent-arc tracker.</description>
   <maintainer email="2630086757@qq.com">Jianru Chu</maintainer>
-  <license>Apache-2.0</license>
 
   <buildtool_depend>catkin</buildtool_depend>
   <exec_depend>rospy</exec_depend>
