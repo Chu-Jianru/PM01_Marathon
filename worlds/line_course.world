@@ -1,0 +1,908 @@
+<?xml version="1.0"?>
+<sdf version="1.4">
+  <world name="marathon_course">
+    <scene>
+      <ambient>0.45 0.45 0.45 1</ambient>
+      <background>0.75 0.82 0.9 1</background>
+      <shadows>false</shadows>
+    </scene>
+    <include><uri>model://sun</uri></include>
+    <model name='road'>
+      <static>true</static>
+      <pose>55.51386578777182 9.425097133467297 0 0 0 0</pose>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry><plane><normal>0 0 1</normal><size>191.02773157554364 98.8501942669346</size></plane></geometry>
+        </collision>
+        <visual name='visual'>
+          <geometry><plane><normal>0 0 1</normal><size>191.02773157554364 98.8501942669346</size></plane></geometry>
+          <material>
+            <ambient>0.45 0.45 0.45 1</ambient>
+            <diffuse>0.45 0.45 0.45 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <physics type="ode">
+      <max_step_size>0.002</max_step_size>
+      <real_time_update_rate>500</real_time_update_rate>
+      <real_time_factor>1</real_time_factor>
+    </physics>
+    <model name='paint_left_0'>
+      <static>true</static>
+      <pose>0.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_1'>
+      <static>true</static>
+      <pose>3.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_2'>
+      <static>true</static>
+      <pose>6.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_3'>
+      <static>true</static>
+      <pose>9.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_4'>
+      <static>true</static>
+      <pose>12.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_5'>
+      <static>true</static>
+      <pose>15.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_6'>
+      <static>true</static>
+      <pose>18.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_7'>
+      <static>true</static>
+      <pose>21.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_8'>
+      <static>true</static>
+      <pose>22.0 2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_9'>
+      <static>true</static>
+      <pose>24.810817937166174 2.0681494985348765 0.01 0 0 0.0484813681109536</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_10'>
+      <static>true</static>
+      <pose>27.61503050078439 2.2724378439963795 0.01 0 0 0.0969627362219072</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_11'>
+      <static>true</static>
+      <pose>30.406047839820307 2.612384962305218 0.01 0 0 0.14544410433286079</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_12'>
+      <static>true</static>
+      <pose>33.1773111117892 3.087191983611686 0.01 0 0 0.1939254724438144</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_13'>
+      <static>true</static>
+      <pose>35.922307895922344 3.6957431196260435 0.01 0 0 0.242406840554768</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_14'>
+      <static>true</static>
+      <pose>38.63458749724323 4.436608285701645 0.01 0 0 0.29088820866572157</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_15'>
+      <static>true</static>
+      <pose>41.30777610558924 5.308046461509195 0.01 0 0 0.3393695767766752</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_16'>
+      <static>true</static>
+      <pose>43.93559177395527 6.308009782404355 0.01 0 0 0.3878509448876288</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_17'>
+      <static>true</static>
+      <pose>46.51185918096057 7.434148351874301 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_18'>
+      <static>true</static>
+      <pose>49.23078254207052 8.7020031370964 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_19'>
+      <static>true</static>
+      <pose>51.94970590318047 9.969857922318498 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_20'>
+      <static>true</static>
+      <pose>54.66862926429042 11.237712707540595 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_21'>
+      <static>true</static>
+      <pose>57.38755262540037 12.505567492762694 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_22'>
+      <static>true</static>
+      <pose>60.10647598651032 13.773422277984793 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_23'>
+      <static>true</static>
+      <pose>62.82539934762027 15.04127706320689 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_24'>
+      <static>true</static>
+      <pose>65.5793403689018 16.245080361605794 0.01 0 0 0.3878509448876288</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_25'>
+      <static>true</static>
+      <pose>68.38838470405167 17.314006670148895 0.01 0 0 0.3393695767766752</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_26'>
+      <static>true</static>
+      <pose>71.24593114745603 18.245544030494898 0.01 0 0 0.2908882086657216</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_27'>
+      <static>true</static>
+      <pose>74.14526451438526 19.03750334595503 0.01 0 0 0.242406840554768</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_28'>
+      <static>true</static>
+      <pose>77.07957142156206 19.68802352583244 0.01 0 0 0.1939254724438144</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_29'>
+      <static>true</static>
+      <pose>80.04195629849433 20.195575858953152 0.01 0 0 0.1454441043328608</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_30'>
+      <static>true</static>
+      <pose>83.02545759194652 20.55896760611087 0.01 0 0 0.09696273622190721</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_31'>
+      <static>true</static>
+      <pose>86.02306412546945 20.777344802983517 0.01 0 0 0.048481368110953604</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_32'>
+      <static>true</static>
+      <pose>89.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_33'>
+      <static>true</static>
+      <pose>92.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_34'>
+      <static>true</static>
+      <pose>95.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_35'>
+      <static>true</static>
+      <pose>98.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_36'>
+      <static>true</static>
+      <pose>101.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_37'>
+      <static>true</static>
+      <pose>104.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_38'>
+      <static>true</static>
+      <pose>107.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_39'>
+      <static>true</static>
+      <pose>110.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_left_40'>
+      <static>true</static>
+      <pose>111.02773157554364 20.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_0'>
+      <static>true</static>
+      <pose>0.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_1'>
+      <static>true</static>
+      <pose>3.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_2'>
+      <static>true</static>
+      <pose>6.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_3'>
+      <static>true</static>
+      <pose>9.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_4'>
+      <static>true</static>
+      <pose>12.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_5'>
+      <static>true</static>
+      <pose>15.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_6'>
+      <static>true</static>
+      <pose>18.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_7'>
+      <static>true</static>
+      <pose>21.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_8'>
+      <static>true</static>
+      <pose>22.0 -2.0 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_9'>
+      <static>true</static>
+      <pose>25.004667450074184 -1.9271505360489247 0.01 0 0 0.0484813681109536</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_10'>
+      <static>true</static>
+      <pose>28.002273983597103 -1.7087733391762836 0.01 0 0 0.0969627362219072</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_11'>
+      <static>true</static>
+      <pose>30.985775277049296 -1.3453815920185594 0.01 0 0 0.14544410433286079</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_12'>
+      <static>true</static>
+      <pose>33.948160153981554 -0.8378292588978526 0.01 0 0 0.1939254724438144</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_13'>
+      <static>true</static>
+      <pose>36.882467061158366 -0.18730907902043636 0.01 0 0 0.242406840554768</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_14'>
+      <static>true</static>
+      <pose>39.78180042808759 0.6046502364396891 0.01 0 0 0.29088820866572157</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_15'>
+      <static>true</static>
+      <pose>42.63934687149195 1.5361875967856917 0.01 0 0 0.3393695767766752</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_16'>
+      <static>true</static>
+      <pose>45.44839120664183 2.6051139053287926 0.01 0 0 0.3878509448876288</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_17'>
+      <static>true</static>
+      <pose>48.202332227923364 3.8089172037277006 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_18'>
+      <static>true</static>
+      <pose>50.921255589033315 5.076771988949799 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_19'>
+      <static>true</static>
+      <pose>53.640178950143266 6.344626774171898 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_20'>
+      <static>true</static>
+      <pose>56.35910231125322 7.612481559393995 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_21'>
+      <static>true</static>
+      <pose>59.07802567236316 8.880336344616094 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_22'>
+      <static>true</static>
+      <pose>61.79694903347311 10.148191129838192 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_23'>
+      <static>true</static>
+      <pose>64.51587239458307 11.41604591506029 0.01 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_24'>
+      <static>true</static>
+      <pose>67.09213980158836 12.542184484530232 0.01 0 0 0.3878509448876288</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_25'>
+      <static>true</static>
+      <pose>69.71995546995439 13.54214780542539 0.01 0 0 0.3393695767766752</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_26'>
+      <static>true</static>
+      <pose>72.39314407830038 14.413585981232941 0.01 0 0 0.2908882086657216</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_27'>
+      <static>true</static>
+      <pose>75.1054236796213 15.15445114730855 0.01 0 0 0.242406840554768</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_28'>
+      <static>true</static>
+      <pose>77.85042046375443 15.763002283322901 0.01 0 0 0.1939254724438144</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_29'>
+      <static>true</static>
+      <pose>80.62168373572332 16.237809304629376 0.01 0 0 0.1454441043328608</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_30'>
+      <static>true</static>
+      <pose>83.41270107475924 16.577756422938208 0.01 0 0 0.09696273622190721</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_31'>
+      <static>true</static>
+      <pose>86.21691363837745 16.782044768399718 0.01 0 0 0.048481368110953604</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_32'>
+      <static>true</static>
+      <pose>89.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_33'>
+      <static>true</static>
+      <pose>92.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_34'>
+      <static>true</static>
+      <pose>95.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_35'>
+      <static>true</static>
+      <pose>98.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_36'>
+      <static>true</static>
+      <pose>101.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_37'>
+      <static>true</static>
+      <pose>104.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_38'>
+      <static>true</static>
+      <pose>107.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_39'>
+      <static>true</static>
+      <pose>110.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='paint_right_40'>
+      <static>true</static>
+      <pose>111.02773157554364 16.850194266934594 0.01 0 0 0.0</pose>
+      <link name='link'>
+        <visual name='visual'>
+          <geometry><box><size>0.7 0.12 0.02</size></box></geometry>
+          <material><ambient>0.95 0.95 0.95 1</ambient><diffuse>0.95 0.95 0.95 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='low_clutter'>
+      <static>true</static>
+      <pose>12.0 1.8 0.175 0 0 0.0</pose>
+      <link name='link'>
+        <collision name='collision'><geometry><cylinder><radius>0.25</radius><length>0.35</length></cylinder></geometry></collision>
+        <visual name='visual'>
+          <geometry><cylinder><radius>0.25</radius><length>0.35</length></cylinder></geometry>
+          <material><ambient>0.45 0.45 0.45 1</ambient><diffuse>0.45 0.45 0.45 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='cone_a'>
+      <static>true</static>
+      <pose>25.91376754303964 1.3805123434315485 0.45 0 0 0.06666669748362715</pose>
+      <link name='link'>
+        <collision name='collision'><geometry><cylinder><radius>0.18</radius><length>0.9</length></cylinder></geometry></collision>
+        <visual name='visual'>
+          <geometry><cylinder><radius>0.18</radius><length>0.9</length></cylinder></geometry>
+          <material><ambient>0.9 0.35 0.05 1</ambient><diffuse>0.9 0.35 0.05 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='spectator'>
+      <static>true</static>
+      <pose>18.0 3.2 0.85 0 0 0.0</pose>
+      <link name='link'>
+        <collision name='collision'><geometry><cylinder><radius>0.28</radius><length>1.7</length></cylinder></geometry></collision>
+        <visual name='visual'>
+          <geometry><cylinder><radius>0.28</radius><length>1.7</length></cylinder></geometry>
+          <material><ambient>0.15 0.35 0.75 1</ambient><diffuse>0.15 0.35 0.75 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='person'>
+      <static>true</static>
+      <pose>47.99235850085415 8.565867690218944 0.85 0 0 0.4363323129985824</pose>
+      <link name='link'>
+        <collision name='collision'><geometry><cylinder><radius>0.25</radius><length>1.7</length></cylinder></geometry></collision>
+        <visual name='visual'>
+          <geometry><cylinder><radius>0.25</radius><length>1.7</length></cylinder></geometry>
+          <material><ambient>0.75 0.2 0.2 1</ambient><diffuse>0.75 0.2 0.2 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+    <model name='cone_b'>
+      <static>true</static>
+      <pose>74.42529208133014 18.694355699398102 0.45 0 0 0.23933099990270687</pose>
+      <link name='link'>
+        <collision name='collision'><geometry><cylinder><radius>0.18</radius><length>0.9</length></cylinder></geometry></collision>
+        <visual name='visual'>
+          <geometry><cylinder><radius>0.18</radius><length>0.9</length></cylinder></geometry>
+          <material><ambient>0.9 0.35 0.05 1</ambient><diffuse>0.9 0.35 0.05 1</diffuse></material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

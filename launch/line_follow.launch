@@ -1,0 +1,67 @@
+<launch>
+  <!-- Short outdoor marathon segment.
+       A 32-line lidar publishes /rslidar_points, IMU publishes /imu/data,
+       and RTK publishes /gnss_ksxt, the three inputs in robosense.yaml.
+       The body cloud and /odometry feed the unchanged 3.5 m/s tracker.
+       The diff-drive base only tracks that velocity command. -->
+  <arg name="gui" default="true"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find gazebo_line_demo)/worlds/line_course.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="$(arg gui)"/>
+    <arg name="headless" value="false"/>
+  </include>
+
+  <param name="robot_description" textfile="$(find gazebo_line_demo)/urdf/marathon_base.urdf"/>
+  <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"
+        args="-urdf -model marathon_base -x 0 -y 0 -z 0.15 -param robot_description"/>
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher"/>
+
+  <node pkg="gazebo_line_demo" type="odom_bridge.py" name="odom_bridge" output="screen"/>
+  <node pkg="gazebo_line_demo" type="gnss_ksxt.py" name="gnss_ksxt" output="screen"/>
+  <node pkg="gazebo_line_demo" type="rslidar_points.py" name="rslidar_points" output="screen">
+    <param name="horizontal_samples" value="360"/>
+    <param name="vertical_samples" value="32"/>
+    <param name="scan_period" value="0.1"/>
+  </node>
+  <node pkg="gazebo_line_demo" type="cloud_to_scan.py" name="cloud_to_scan" output="screen">
+    <param name="range_max" value="70.0"/>
+  </node>
+  <node pkg="gazebo_line_demo" type="lane_paths.py" name="lane_paths" output="screen">
+    <param name="half_width" value="2.0"/>
+  </node>
+
+  <node pkg="sim_interface" type="sim_interface_node" name="sim_interface_node" output="screen">
+    <param name="odom_input_topic" value="/odometry"/>
+    <param name="odom_body_topic" value="/odometry_body"/>
+    <param name="odom_body_frame_id" value="camera_init"/>
+    <param name="odom_body_child_frame_id" value="body"/>
+  </node>
+  <node pkg="tf" type="static_transform_publisher" name="map_to_camera_init"
+        args="0 0 0 0 0 0 map camera_init 100"/>
+
+  <include file="$(find costmap_converter)/launch/laserscan_obstacle_converter.launch">
+    <arg name="scan_topic" value="/scan"/>
+    <arg name="obstacles_topic" value="/obstacles_raw"/>
+  </include>
+  <node pkg="vo_navigation" type="lidar_obstacle_node" name="lidar_obstacle_node" output="screen">
+    <rosparam command="load" file="$(find vo_navigation)/config/lidar_obstacle.yaml"/>
+    <param name="target_frame" value="camera_init"/>
+  </node>
+  <node pkg="vo_navigation" type="subgoal_selector_node" name="subgoal_selector_node" output="screen">
+    <rosparam command="load" file="$(find vo_navigation)/config/subgoal_selector.yaml"/>
+  </node>
+  <node pkg="vo_navigation" type="vo_node" name="vo_node" output="screen">
+    <rosparam command="load" file="$(find vo_navigation)/config/vo_node.yaml"/>
+    <param name="enable_runtime_debug" value="false"/>
+    <param name="enable_file_log" value="false"/>
+    <!-- Stop while the last subgoal is still ahead. The real route does not end here. -->
+    <param name="goal_stop_distance" value="2.5"/>
+  </node>
+
+  <rosparam command="load" file="$(find speed_controller)/config/speed_controller.yaml"/>
+  <node pkg="speed_controller" type="speed_controller_discrete" name="speed_controller_node" output="screen"/>
+  <node pkg="topic_tools" type="relay" name="cmd_relay" args="/fuzzy_cmd_vel /cmd_vel"/>
+</launch>
