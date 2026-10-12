@@ -15,6 +15,7 @@ catkin_install_python(PROGRAMS
   scripts/sidewalk_traffic.py
   scripts/cloud_to_scan.py
   scripts/gait_player.py
+  scripts/policy_gait.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 

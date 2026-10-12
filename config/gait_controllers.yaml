@@ -1,3 +1,4 @@
+# 腿很轻，力矩上限 2 Nm。增益再大，或者直接写入关节角，都会把车体掀翻。
 joint_state_controller:
   type: joint_state_controller/JointStateController
   publish_rate: 50
@@ -5,22 +6,30 @@ joint_state_controller:
 gait_controller:
   type: position_controllers/JointGroupPositionController
   joints:
+    - J01_HIP_ROLL_L
+    - J02_HIP_YAW_L
     - J00_HIP_PITCH_L
     - J03_KNEE_PITCH_L
     - J04_ANKLE_PITCH_L
+    - J05_ANKLE_ROLL_L
+    - J07_HIP_ROLL_R
+    - J08_HIP_YAW_R
     - J06_HIP_PITCH_R
     - J09_KNEE_PITCH_R
     - J10_ANKLE_PITCH_R
-    - J13_SHOULDER_PITCH_L
-    - J18_SHOULDER_PITCH_R
+    - J11_ANKLE_ROLL_R
 
 gazebo_ros_control:
   pid_gains:
-    J00_HIP_PITCH_L: {p: 220.0, i: 0.0, d: 8.0}
-    J03_KNEE_PITCH_L: {p: 180.0, i: 0.0, d: 6.0}
-    J04_ANKLE_PITCH_L: {p: 60.0, i: 0.0, d: 2.0}
-    J06_HIP_PITCH_R: {p: 220.0, i: 0.0, d: 8.0}
-    J09_KNEE_PITCH_R: {p: 180.0, i: 0.0, d: 6.0}
-    J10_ANKLE_PITCH_R: {p: 60.0, i: 0.0, d: 2.0}
-    J13_SHOULDER_PITCH_L: {p: 50.0, i: 0.0, d: 2.0}
-    J18_SHOULDER_PITCH_R: {p: 50.0, i: 0.0, d: 2.0}
+    J00_HIP_PITCH_L: {p: 4.0, i: 0.0, d: 0.3}
+    J01_HIP_ROLL_L: {p: 4.0, i: 0.0, d: 0.3}
+    J02_HIP_YAW_L: {p: 4.0, i: 0.0, d: 0.3}
+    J03_KNEE_PITCH_L: {p: 6.0, i: 0.0, d: 0.4}
+    J04_ANKLE_PITCH_L: {p: 2.0, i: 0.0, d: 0.15}
+    J05_ANKLE_ROLL_L: {p: 2.0, i: 0.0, d: 0.15}
+    J06_HIP_PITCH_R: {p: 4.0, i: 0.0, d: 0.3}
+    J07_HIP_ROLL_R: {p: 4.0, i: 0.0, d: 0.3}
+    J08_HIP_YAW_R: {p: 4.0, i: 0.0, d: 0.3}
+    J09_KNEE_PITCH_R: {p: 6.0, i: 0.0, d: 0.4}
+    J10_ANKLE_PITCH_R: {p: 2.0, i: 0.0, d: 0.15}
+    J11_ANKLE_ROLL_R: {p: 2.0, i: 0.0, d: 0.15}

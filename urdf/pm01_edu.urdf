@@ -63,6 +63,11 @@
       <wheelAcceleration>8</wheelAcceleration>
       <wheelTorque>80</wheelTorque>
     </plugin>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/</robotNamespace>
+      <controlPeriod>0.01</controlPeriod>
+      <robotParam>robot_description</robotParam>
+    </plugin>
   </gazebo>
   <gazebo reference="body">
     <mu1>0.4</mu1>
@@ -107,10 +112,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J00_HIP_PITCH_L" type="fixed">
-        <origin xyz="0.01541 0.076141 -0.061208" rpy="0 0 0"/>
-        <parent link="LINK_BASE"/>
-        <child link="LINK_HIP_PITCH_L"/>
+    <joint name="J00_HIP_PITCH_L" type="revolute">
+        <origin xyz="0.01541 0.076141 -0.061208" rpy="0 0 0"/> <parent link="LINK_BASE"/> <child link="LINK_HIP_PITCH_L"/>
+        <axis xyz="0 0.96593 -0.25882"/>
+        <limit lower="-3.141" upper="2.443" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_HIP_ROLL_L">
         <inertial>
@@ -125,10 +131,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J01_HIP_ROLL_L" type="fixed">
-        <origin xyz="0.048 0.049359 -0.013226" rpy="0 0 0"/>
-        <parent link="LINK_HIP_PITCH_L"/>
-        <child link="LINK_HIP_ROLL_L"/>
+    <joint name="J01_HIP_ROLL_L" type="revolute">
+        <origin xyz="0.048 0.049359 -0.013226" rpy="0 0 0"/> <parent link="LINK_HIP_PITCH_L"/> <child link="LINK_HIP_ROLL_L"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.436" upper="2.094" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_HIP_YAW_L">
         <inertial>
@@ -143,10 +150,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J02_HIP_YAW_L" type="fixed">
-        <origin xyz="-0.03139 -0.0015951 -0.086016" rpy="0 0 0"/>
-        <parent link="LINK_HIP_ROLL_L"/>
-        <child link="LINK_HIP_YAW_L"/>
+    <joint name="J02_HIP_YAW_L" type="revolute">
+        <origin xyz="-0.03139 -0.0015951 -0.086016" rpy="0 0 0"/> <parent link="LINK_HIP_ROLL_L"/> <child link="LINK_HIP_YAW_L"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-1.57" upper="4.014" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_KNEE_PITCH_L">
         <inertial>
@@ -161,10 +169,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J03_KNEE_PITCH_L" type="fixed">
-        <origin xyz="-0.02602 -2.8566E-05 -0.23655" rpy="0 0 0"/>
-        <parent link="LINK_HIP_YAW_L"/>
-        <child link="LINK_KNEE_PITCH_L"/>
+    <joint name="J03_KNEE_PITCH_L" type="revolute">
+        <origin xyz="-0.02602 -2.8566E-05 -0.23655" rpy="0 0 0"/> <parent link="LINK_HIP_YAW_L"/> <child link="LINK_KNEE_PITCH_L"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.3491" upper="2.3911" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_ANKLE_PITCH_L">
         <inertial>
@@ -179,10 +188,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J04_ANKLE_PITCH_L" type="fixed">
-        <origin xyz="-0.026756 0.00041994 -0.36305" rpy="0 0 0"/>
-        <parent link="LINK_KNEE_PITCH_L"/>
-        <child link="LINK_ANKLE_PITCH_L"/>
+    <joint name="J04_ANKLE_PITCH_L" type="revolute">
+        <origin xyz="-0.026756 0.00041994 -0.36305" rpy="0 0 0"/> <parent link="LINK_KNEE_PITCH_L"/> <child link="LINK_ANKLE_PITCH_L"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.6807" upper="0.7243" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_ANKLE_ROLL_L">
         <inertial>
@@ -197,10 +207,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J05_ANKLE_ROLL_L" type="fixed">
-        <origin xyz="0 0 -0.015" rpy="0 0 0"/>
-        <parent link="LINK_ANKLE_PITCH_L"/>
-        <child link="LINK_ANKLE_ROLL_L"/>
+    <joint name="J05_ANKLE_ROLL_L" type="revolute">
+        <origin xyz="0 0 -0.015" rpy="0 0 0"/> <parent link="LINK_ANKLE_PITCH_L"/> <child link="LINK_ANKLE_ROLL_L"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.2618" upper="0.2618" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
 
     <link name="LINK_FOOT_L">
@@ -234,10 +245,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J06_HIP_PITCH_R" type="fixed">
-        <origin xyz="0.01541 -0.076141 -0.061208" rpy="0 0 0"/>
-        <parent link="LINK_BASE"/>
-        <child link="LINK_HIP_PITCH_R"/>
+    <joint name="J06_HIP_PITCH_R" type="revolute">
+        <origin xyz="0.01541 -0.076141 -0.061208" rpy="0 0 0"/> <parent link="LINK_BASE"/> <child link="LINK_HIP_PITCH_R"/>
+        <axis xyz="0 0.96593 0.25882"/>
+        <limit lower="-3.141" upper="2.443" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_HIP_ROLL_R">
         <inertial>
@@ -252,10 +264,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J07_HIP_ROLL_R" type="fixed">
-        <origin xyz="0.048 -0.04936 -0.013226" rpy="0 0 0"/>
-        <parent link="LINK_HIP_PITCH_R"/>
-        <child link="LINK_HIP_ROLL_R"/>
+    <joint name="J07_HIP_ROLL_R" type="revolute">
+        <origin xyz="0.048 -0.04936 -0.013226" rpy="0 0 0"/> <parent link="LINK_HIP_PITCH_R"/> <child link="LINK_HIP_ROLL_R"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-2.094" upper="0.436" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_HIP_YAW_R">
         <inertial>
@@ -270,10 +283,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J08_HIP_YAW_R" type="fixed">
-        <origin xyz="-0.03139 0.0015966 -0.086016" rpy="0 0 0"/>
-        <parent link="LINK_HIP_ROLL_R"/>
-        <child link="LINK_HIP_YAW_R"/>
+    <joint name="J08_HIP_YAW_R" type="revolute">
+        <origin xyz="-0.03139 0.0015966 -0.086016" rpy="0 0 0"/> <parent link="LINK_HIP_ROLL_R"/> <child link="LINK_HIP_YAW_R"/>
+        <axis xyz="0 0 1"/>
+        <limit lower="-4.014" upper="1.57" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_KNEE_PITCH_R">
         <inertial>
@@ -288,10 +302,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J09_KNEE_PITCH_R" type="fixed">
-        <origin xyz="-0.02602 2.8566E-05 -0.23655" rpy="0 0 0"/>
-        <parent link="LINK_HIP_YAW_R"/>
-        <child link="LINK_KNEE_PITCH_R"/>
+    <joint name="J09_KNEE_PITCH_R" type="revolute">
+        <origin xyz="-0.02602 2.8566E-05 -0.23655" rpy="0 0 0"/> <parent link="LINK_HIP_YAW_R"/> <child link="LINK_KNEE_PITCH_R"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.3491" upper="2.3911" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_ANKLE_PITCH_R">
         <inertial>
@@ -306,10 +321,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J10_ANKLE_PITCH_R" type="fixed">
-        <origin xyz="-0.026756 -0.00041994 -0.36305" rpy="0 0 0"/>
-        <parent link="LINK_KNEE_PITCH_R"/>
-        <child link="LINK_ANKLE_PITCH_R"/>
+    <joint name="J10_ANKLE_PITCH_R" type="revolute">
+        <origin xyz="-0.026756 -0.00041994 -0.36305" rpy="0 0 0"/> <parent link="LINK_KNEE_PITCH_R"/> <child link="LINK_ANKLE_PITCH_R"/>
+        <axis xyz="0 1 0"/>
+        <limit lower="-0.6807" upper="0.7243" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_ANKLE_ROLL_R">
         <inertial>
@@ -324,10 +340,11 @@
             </geometry>
         </visual>
     </link>
-    <joint name="J11_ANKLE_ROLL_R" type="fixed">
-        <origin xyz="0 0 -0.015" rpy="0 0 0"/>
-        <parent link="LINK_ANKLE_PITCH_R"/>
-        <child link="LINK_ANKLE_ROLL_R"/>
+    <joint name="J11_ANKLE_ROLL_R" type="revolute">
+        <origin xyz="0 0 -0.015" rpy="0 0 0"/> <parent link="LINK_ANKLE_PITCH_R"/> <child link="LINK_ANKLE_ROLL_R"/>
+        <axis xyz="1 0 0"/>
+        <limit lower="-0.2618" upper="0.2618" effort="2" velocity="8"/>
+        <dynamics damping="0.1" friction="0"/>
     </joint>
     <link name="LINK_TORSO_YAW">
         <inertial>
@@ -707,4 +724,64 @@
       </plugin>
     </sensor>
   </gazebo>
+  <transmission name="trans_J01_HIP_ROLL_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J01_HIP_ROLL_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J01_HIP_ROLL_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J02_HIP_YAW_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J02_HIP_YAW_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J02_HIP_YAW_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J00_HIP_PITCH_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J00_HIP_PITCH_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J00_HIP_PITCH_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J03_KNEE_PITCH_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J03_KNEE_PITCH_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J03_KNEE_PITCH_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J04_ANKLE_PITCH_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J04_ANKLE_PITCH_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J04_ANKLE_PITCH_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J05_ANKLE_ROLL_L">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J05_ANKLE_ROLL_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J05_ANKLE_ROLL_L"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J07_HIP_ROLL_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J07_HIP_ROLL_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J07_HIP_ROLL_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J08_HIP_YAW_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J08_HIP_YAW_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J08_HIP_YAW_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J06_HIP_PITCH_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J06_HIP_PITCH_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J06_HIP_PITCH_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J09_KNEE_PITCH_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J09_KNEE_PITCH_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J09_KNEE_PITCH_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J10_ANKLE_PITCH_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J10_ANKLE_PITCH_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J10_ANKLE_PITCH_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
+  <transmission name="trans_J11_ANKLE_ROLL_R">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="J11_ANKLE_ROLL_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface></joint>
+    <actuator name="act_J11_ANKLE_ROLL_R"><hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface><mechanicalReduction>1</mechanicalReduction></actuator>
+  </transmission>
 </robot>

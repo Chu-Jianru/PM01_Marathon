@@ -5,9 +5,13 @@
     <arg name="world_name" value="$(find pm01_marathon)/worlds/line_course.world"/>
     <arg name="paused" value="false"/>
     <arg name="use_sim_time" value="true"/>
-    <arg name="gui" value="$(arg gui)"/>
+    <!-- 窗口要等控制器起来再开。和 gzserver 同时开时，仿真会停在零点几秒。 -->
+    <arg name="gui" value="false"/>
     <arg name="headless" value="false"/>
   </include>
+
+  <node if="$(arg gui)" name="gazebo_gui" pkg="gazebo_ros" type="gzclient" output="screen"
+        launch-prefix="$(find pm01_marathon)/scripts/open_gazebo_gui.py"/>
 
   <param name="robot_description" textfile="$(find pm01_marathon)/urdf/pm01_edu.urdf"/>
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"
@@ -55,4 +59,12 @@
   <rosparam command="load" file="$(find speed_controller)/config/speed_controller.yaml"/>
   <node pkg="speed_controller" type="speed_controller_discrete" name="speed_controller_node" output="screen"/>
   <node pkg="topic_tools" type="relay" name="cmd_relay" args="/fuzzy_cmd_vel /cmd_vel"/>
+
+  <rosparam command="load" file="$(find pm01_marathon)/config/gait_controllers.yaml"/>
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" output="screen"
+        args="joint_state_controller gait_controller"/>
+  <node pkg="pm01_marathon" type="policy_gait.py" name="policy_gait" output="screen">
+    <param name="policy_path" value="$(env HOME)/engineai_policy/zqsa01_policy.onnx"/>
+    <param name="config_path" value="$(env HOME)/engineai_policy/zqsa01_rl.yaml"/>
+  </node>
 </launch>
